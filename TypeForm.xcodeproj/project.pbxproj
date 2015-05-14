@@ -35,6 +35,8 @@
 		0CF46DED1B04AE6800578733 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF46DE21B04AE6800578733 /* SystemConfiguration.framework */; };
 		0CF46DF11B04E7F000578733 /* Close_btn_grey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CF46DF01B04E7F000578733 /* Close_btn_grey@2x.png */; };
 		0CF46DF41B04E90600578733 /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CF46DF31B04E90600578733 /* edit@2x.png */; };
+		0CF46DF71B04F54000578733 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0CF46DF61B04F54000578733 /* Podfile */; };
+		0CF46DF91B04F55800578733 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0CF46DF81B04F55800578733 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,10 @@
 		0CF46DE21B04AE6800578733 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0CF46DF01B04E7F000578733 /* Close_btn_grey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Close_btn_grey@2x.png"; sourceTree = "<group>"; };
 		0CF46DF31B04E90600578733 /* edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit@2x.png"; sourceTree = "<group>"; };
+		0CF46DF51B04F3EC00578733 /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
+		0CF46DF61B04F54000578733 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		0CF46DF81B04F55800578733 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		0CF46DFA1B04F59700578733 /* Global.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +150,8 @@
 			children = (
 				0CF46D9B1B04A7F800578733 /* AppDelegate.h */,
 				0CF46D9C1B04A7F800578733 /* AppDelegate.m */,
+				0CF46DF61B04F54000578733 /* Podfile */,
+				0CF46DF81B04F55800578733 /* .gitignore */,
 				0CF46DC41B04A83D00578733 /* View Controllers */,
 				0CF46DC31B04A83200578733 /* Models */,
 				0CF46DA11B04A7F800578733 /* Main.storyboard */,
@@ -191,6 +199,8 @@
 				0CF46DC11B04A82C00578733 /* Field.m */,
 				0CF46DC51B04A94300578733 /* Link.h */,
 				0CF46DC61B04A94300578733 /* Link.m */,
+				0CF46DF51B04F3EC00578733 /* Defines.h */,
+				0CF46DFA1B04F59700578733 /* Global.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -319,6 +329,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CF46DF71B04F54000578733 /* Podfile in Resources */,
+				0CF46DF91B04F55800578733 /* .gitignore in Resources */,
 				0CF46DA31B04A7F800578733 /* Main.storyboard in Resources */,
 				0CF46DF11B04E7F000578733 /* Close_btn_grey@2x.png in Resources */,
 				0CF46DA81B04A7F800578733 /* LaunchScreen.xib in Resources */,
