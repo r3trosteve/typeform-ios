@@ -125,8 +125,8 @@
     // Create the array of Field Dictionaires
     NSMutableArray *fieldsArray = [[NSMutableArray alloc] init];
     for (Field * field in _form.fields) {
-        [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%@", field.question], @"question", [NSString stringWithFormat:@"%@", field.type], @"type", nil];
-        [fieldsArray addObject:field];
+        NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%@", field.question], @"question", [NSString stringWithFormat:@"%@", field.type], @"type", nil];
+        [fieldsArray addObject:dict];
     }
     NSArray *fields = [fieldsArray copy];
     
