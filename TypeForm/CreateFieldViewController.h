@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class Form;
+ @class Field;
+
 @interface CreateFieldViewController : UIViewController
+
+@property (strong, nonatomic) Form *form;
 
 @end

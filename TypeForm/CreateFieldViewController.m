@@ -7,8 +7,14 @@
 //
 
 #import "CreateFieldViewController.h"
+#import "Form.h"
+#import "Field.h"
 
 @interface CreateFieldViewController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *formTitleLabel;
+@property (weak, nonatomic) IBOutlet UITextField *questionTextField;
+@property (weak, nonatomic) IBOutlet UITextField *questionTypeTextField;
 
 @end
 
@@ -16,7 +22,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+     // Do any additional setup after loading the view.
+    
+    if (_form) {
+        _formTitleLabel.text = _form.title;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +43,32 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void) dissmissSelf {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) insertNewQuestion {
+    Field *field = [Field object];
+    field.form = _form;
+    field.question = _questionTextField.text;
+    field.type = _questionTypeTextField.text;
+    
+    [field saveInBackground];
+    [_form ensureFields:^(NSMutableArray *fields) {
+        [fields addObject:field];
+        
+        [self dissmissSelf];
+    }];
+    
+}
+
+- (IBAction)saveQuestionWasPressed:(id)sender {
+    [self insertNewQuestion];
+    
+}
+- (IBAction)closeQuestionWasPressed:(id)sender {
+    [self dissmissSelf];
+}
 
 @end

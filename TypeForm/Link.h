@@ -7,9 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
-@interface Link : NSObject
+@class Form;
 
+@interface Link : PFObject <PFSubclassing>
+
+@property (strong, nonatomic) Form *form;
 @property (strong, nonatomic) NSString *url;
+
++ (void) load;
++ (NSString *) parseClassName;
 
 @end

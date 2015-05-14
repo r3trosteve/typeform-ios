@@ -7,10 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
-@interface Field : NSObject
+@class Form;
 
+@interface Field : PFObject <PFSubclassing>
+
+@property (strong, nonatomic) Form *form;
 @property (strong, nonatomic) NSString *type;
 @property (strong, nonatomic) NSString *question;
+
++ (NSString *) parseClassName;
 
 @end

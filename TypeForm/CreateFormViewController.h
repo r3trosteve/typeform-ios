@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class Form;
+
 @interface CreateFormViewController : UIViewController
+
+@property (strong, nonatomic) Form *form;
 
 @end
