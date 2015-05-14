@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="316" y="394"/>
         </scene>
-        <!--Form List View Controller-->
+        <!--TypeForms-->
         <scene sceneID="RLa-xi-PIx">
             <objects>
                 <tableViewController id="BNB-B6-y4K" customClass="FormListViewController" sceneMemberID="viewController">
@@ -47,8 +47,9 @@
                             <outlet property="delegate" destination="BNB-B6-y4K" id="oew-At-xKV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="rBr-MH-iOt">
+                    <navigationItem key="navigationItem" title="TypeForms" id="rBr-MH-iOt">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="mLP-Tg-iD3">
+                            <color key="tintColor" red="0.2470588235" green="0.66274509800000003" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="CH1-wE-kt6" kind="presentation" id="92K-nW-C2J"/>
                             </connections>
@@ -75,18 +76,19 @@
                                 <rect key="frame" x="0.0" y="58" width="600" height="542"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hi9-ff-1ds">
-                                <rect key="frame" x="527" y="20" width="40" height="30"/>
-                                <state key="normal" title="Close">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hi9-ff-1ds">
+                                <rect key="frame" x="524" y="5" width="60" height="60"/>
+                                <state key="normal" image="Close_btn_grey.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="closeWasPressed:" destination="K6E-Os-4k8" eventType="touchUpInside" id="X5S-wu-gyI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtT-hE-z7S">
-                                <rect key="frame" x="16" y="20" width="54" height="30"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtT-hE-z7S">
+                                <rect key="frame" x="8" y="20" width="60" height="25"/>
                                 <state key="normal" title="Edit">
+                                    <color key="titleColor" red="0.2470588235" green="0.66274509800000003" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -96,12 +98,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="aBU-ps-L3Z" firstAttribute="top" secondItem="xtT-hE-z7S" secondAttribute="bottom" constant="8" id="GEq-CS-gkJ"/>
+                            <constraint firstItem="Hi9-ff-1ds" firstAttribute="trailing" secondItem="4Zg-Wi-A4c" secondAttribute="trailingMargin" id="M38-If-58H"/>
                             <constraint firstItem="aBU-ps-L3Z" firstAttribute="leading" secondItem="4Zg-Wi-A4c" secondAttribute="leadingMargin" constant="-16" id="e4l-z4-Ycl"/>
                             <constraint firstItem="pZJ-3D-IvH" firstAttribute="top" secondItem="aBU-ps-L3Z" secondAttribute="bottom" id="eU5-OG-HTh"/>
-                            <constraint firstItem="aBU-ps-L3Z" firstAttribute="top" secondItem="xtT-hE-z7S" secondAttribute="bottom" constant="8" id="gXW-FH-VhZ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Hi9-ff-1ds" secondAttribute="trailing" constant="17" id="i6q-9n-trU"/>
-                            <constraint firstItem="xtT-hE-z7S" firstAttribute="leading" secondItem="4Zg-Wi-A4c" secondAttribute="leadingMargin" id="q18-b7-8es"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aBU-ps-L3Z" secondAttribute="trailing" constant="-16" id="wLP-eC-jjL"/>
+                            <constraint firstItem="xtT-hE-z7S" firstAttribute="leading" secondItem="4Zg-Wi-A4c" secondAttribute="leadingMargin" constant="-16" id="xZf-YK-sYW"/>
                         </constraints>
                     </view>
                     <connections>
@@ -124,16 +126,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Form Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b0M-KP-EJC">
-                                <rect key="frame" x="145" y="81" width="311" height="69"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lor-C2-CCb">
-                                <rect key="frame" x="183" y="180" width="235" height="44"/>
+                                <rect key="frame" x="150" y="498" width="300" height="60"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.49019607840000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Add Question">
-                                    <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Add New Question">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -141,20 +138,31 @@
                                     <segue destination="hcl-br-HWs" kind="presentation" identifier="addQuestionSegue" id="xkd-Og-jce"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ki2-A2-ATl">
-                                <rect key="frame" x="502" y="20" width="71" height="43"/>
-                                <state key="normal" title="Close">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ki2-A2-ATl">
+                                <rect key="frame" x="513" y="20" width="60" height="60"/>
+                                <state key="normal" image="Close_btn_grey.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="closeWasPressed:" destination="CH1-wE-kt6" eventType="touchUpInside" id="BUL-k5-ra9"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xex-gw-5kf">
-                                <rect key="frame" x="156" y="247" width="300" height="233"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3t-gs-uMq">
+                                <rect key="frame" x="150" y="170" width="300" height="51"/>
+                                <color key="backgroundColor" red="0.42745098040000001" green="0.79215686269999996" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Save Form">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveFormWasPressed:" destination="CH1-wE-kt6" eventType="touchUpInside" id="FXM-uY-JSx"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xex-gw-5kf">
+                                <rect key="frame" x="150" y="229" width="300" height="269"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="wdF-R0-jee">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="55" id="wdF-R0-jee">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wdF-R0-jee" id="F1k-MG-kPV">
@@ -167,17 +175,12 @@
                                     <outlet property="delegate" destination="CH1-wE-kt6" id="xva-by-8Wa"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3t-gs-uMq">
-                                <rect key="frame" x="183" y="511" width="235" height="51"/>
-                                <color key="backgroundColor" red="0.42745098040000001" green="0.79215686269999996" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Save Form">
-                                    <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveFormWasPressed:" destination="CH1-wE-kt6" eventType="touchUpInside" id="FXM-uY-JSx"/>
-                                </connections>
-                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Form Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b0M-KP-EJC">
+                                <rect key="frame" x="36" y="81" width="528" height="69"/>
+                                <color key="textColor" red="0.2470588235" green="0.66274509800000003" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -213,48 +216,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Question is..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tSG-tg-WsS">
-                                <rect key="frame" x="79" y="163" width="443" height="86"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <rect key="frame" x="79" y="163" width="443" height="146"/>
+                                <color key="textColor" red="0.2470588235" green="0.66274509800000003" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="26"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Question Type" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g6I-2n-7Y3">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Question Type e.g short_form" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g6I-2n-7Y3">
                                 <rect key="frame" x="79" y="349" width="443" height="86"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dad-xK-bwc">
-                                <rect key="frame" x="150" y="481" width="301" height="89"/>
+                                <rect key="frame" x="150" y="510" width="301" height="60"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.49019607840000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <state key="normal" title="Save Question">
-                                    <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="saveQuestionWasPressed:" destination="hcl-br-HWs" eventType="touchUpInside" id="jEP-Vg-qqq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6oa-a7-ehC">
-                                <rect key="frame" x="513" y="20" width="71" height="43"/>
-                                <state key="normal" title="Close">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Form Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5i-4p-xJE">
+                                <rect key="frame" x="79" y="49" width="436" height="80"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="32"/>
+                                <color key="textColor" red="0.42745098040000001" green="0.79215686269999996" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6oa-a7-ehC">
+                                <rect key="frame" x="524" y="20" width="60" height="60"/>
+                                <state key="normal" image="Close_btn_grey.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="closeQuestionWasPressed:" destination="hcl-br-HWs" eventType="touchUpInside" id="zth-te-8v7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Form Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5i-4p-xJE">
-                                <rect key="frame" x="79" y="49" width="348" height="55"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6oa-a7-ehC" firstAttribute="trailing" secondItem="SPD-4f-0Wo" secondAttribute="trailingMargin" id="CuR-M5-Boc"/>
                             <constraint firstItem="tSG-tg-WsS" firstAttribute="leading" secondItem="SPD-4f-0Wo" secondAttribute="leadingMargin" constant="63" id="DOq-jj-emN"/>
                             <constraint firstItem="6oa-a7-ehC" firstAttribute="top" secondItem="y8M-Iv-RHP" secondAttribute="bottom" id="FsQ-Ke-J2A"/>
                             <constraint firstItem="g6I-2n-7Y3" firstAttribute="leading" secondItem="SPD-4f-0Wo" secondAttribute="leadingMargin" constant="63" id="Nk7-wS-tRz"/>
+                            <constraint firstItem="6oa-a7-ehC" firstAttribute="trailing" secondItem="SPD-4f-0Wo" secondAttribute="trailingMargin" id="bjD-9H-4xC"/>
                             <constraint firstItem="U5i-4p-xJE" firstAttribute="leading" secondItem="SPD-4f-0Wo" secondAttribute="leadingMargin" constant="63" id="e27-UF-9Ka"/>
                             <constraint firstAttribute="centerX" secondItem="Dad-xK-bwc" secondAttribute="centerX" id="mUM-M6-hhq"/>
                         </constraints>
@@ -270,6 +276,9 @@
             <point key="canvasLocation" x="2288" y="394"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Close_btn_grey.png" width="20" height="20"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="hOm-lX-aGC"/>
     </inferredMetricsTieBreakers>

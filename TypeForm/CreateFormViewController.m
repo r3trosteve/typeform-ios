@@ -104,7 +104,15 @@
         _form = form;
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Your Form Was Created" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
+        
+        
     }];
+}
+
+- (void) createTypeFromRemote {
+    
+    // implement POST request to typeform in this method or move this to the From Class ideally.
+
 }
 
 - (void) updateForm {
