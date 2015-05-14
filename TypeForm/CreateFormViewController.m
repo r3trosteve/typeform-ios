@@ -121,11 +121,16 @@
     
     // implement POST request to typeform in this method or move this to the From Class ideally.
     NSString *url = [NSString stringWithFormat:@"%@", kFormApi];
-    
+   
     // Create the array of Field Dictionaires
+    NSMutableArray *fieldsArray = [[NSMutableArray alloc] init];
+    for (Field * field in _form.fields) {
+        [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%@", field.question], @"question", [NSString stringWithFormat:@"%@", field.type], @"type", nil];
+        [fieldsArray addObject:field];
+    }
+    NSArray *fields = [fieldsArray copy];
     
-    
-    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:_form.title, @"title", nil];
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:_form.title, @"title", fields, @"fields",  nil];
     
     [[BaseApi client] postJSONWithURL:url Param:params onSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         // Handle Success
