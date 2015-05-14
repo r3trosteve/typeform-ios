@@ -11,6 +11,7 @@
 #import "Form.h"
 #import "Field.h"
 #import "CreateFieldViewController.h"
+#import "BaseApi.h"
 
 @interface CreateFormViewController () <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
@@ -102,6 +103,12 @@
     form.url = @"https://forms.typeform.io/to/CT7ei6huux2Ltw";
     [form saveInBackgroundWithBlock: ^(BOOL succeeded, NSError *error) {
         _form = form;
+        if (_form) {
+            if ([_form.fields firstObject]) {
+                [self createTypeFormRemote];
+            }
+        }
+        
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Your Form Was Created" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         
@@ -109,10 +116,25 @@
     }];
 }
 
-- (void) createTypeFromRemote {
+
+- (void) createTypeFormRemote {
     
     // implement POST request to typeform in this method or move this to the From Class ideally.
-
+    NSString *url = [NSString stringWithFormat:@"%@", kFormApi];
+    
+    // Create the array of Field Dictionaires
+    
+    
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:_form.title, @"title", nil];
+    
+    [[BaseApi client] postJSONWithURL:url Param:params onSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        // Handle Success
+        
+        NSLog(@"%@", responseObject);
+    } onError:^(AFHTTPRequestOperation *operation, NSError *error) {
+        // Handle Error
+        NSLog(@"%@", error);
+    }];
 }
 
 - (void) updateForm {
@@ -128,7 +150,12 @@
 }
 - (IBAction)saveFormWasPressed:(id)sender {
     if (_form != nil) {
+        if (_form.uid == nil) {
+            [self createTypeFormRemote];
+        }
         [self updateForm];
+        
+        
         [self dissmissSelf];
     } else {
         [self insertNewForm];
