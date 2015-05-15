@@ -89,6 +89,11 @@
     Form *form = _forms[indexPath.row];
     cell.textLabel.text = form.title;
     cell.detailTextLabel.text = form.uid;
+    cell.textLabel.textColor = [UIColor darkGrayColor];
+    
+    if (form.uid != nil) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
     
     return cell;
 }

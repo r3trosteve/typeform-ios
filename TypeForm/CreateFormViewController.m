@@ -18,6 +18,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *addQuestionButton;
 @property (strong, nonatomic) IBOutlet UIButton *saveFormButton;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIButton *buildFormButton;
+@property (strong, nonatomic) IBOutlet UIImageView *formImage;
 
 @property (nonatomic, strong) NSMutableArray *fields;
 
@@ -28,8 +30,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
     
     if (_form != nil) {
         [self getLatestFields];
@@ -44,18 +44,44 @@
     [_form ensureFields:^(NSMutableArray *fields) {
         _fields = fields;
         [self.tableView reloadData];
+        if ([_form.fields firstObject] != nil) {
+            _buildFormButton.enabled = YES;
+        } else {
+            _buildFormButton.enabled = NO;
+        }
     }];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self getLatestFields];
+    
     [_titleTextField becomeFirstResponder];
+    
+    [self getLatestFields];
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if (_form.uid) {
+        [self animateFormImage];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) animateFormImage {
+    [UIView animateWithDuration:2.0 delay:4.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        CGFloat bottomView = self.view.frame.size.height;
+        CGFloat overlap = 10.0f;
+        CGFloat finalVerticalPosition = bottomView - _formImage.frame.size.height - _buildFormButton.frame.size.height + overlap;
+        CGRect formPosition = CGRectMake(6, finalVerticalPosition, _formImage.frame.size.width, _formImage.frame.size.height);
+        _formImage.frame = formPosition;
+    } completion:nil];
+
 }
 
 
@@ -96,25 +122,33 @@
     return cell;
 }
 
+#pragma mark - Create and Update Form Parse
 
 - (void) insertNewForm {
     Form *form = [Form object];
     form.title = _titleTextField.text;
-    form.url = @"https://forms.typeform.io/to/CT7ei6huux2Ltw";
     [form saveInBackgroundWithBlock: ^(BOOL succeeded, NSError *error) {
         _form = form;
         if (_form) {
-            if ([_form.fields firstObject]) {
-                [self createTypeFormRemote];
+            if ([_form.fields firstObject] == nil) {
+                _buildFormButton.enabled = NO;
+            } else {
+                _buildFormButton.enabled = YES;
             }
         }
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Your Form Was Created" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Your Form Was Saved. Now don't forget to Build it." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         
         
     }];
 }
+
+- (void) updateForm {
+    _form.title = _titleTextField.text;
+}
+
+#pragma mark - Create and Update Form TypeForm
 
 
 - (void) createTypeFormRemote {
@@ -139,6 +173,7 @@
         _form.url = [responseObject valueForKeyPath:@"links.form_render.get"];
         [_form saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             NSLog(@"Typeform saved successfully");
+            [self animateFormImage];
         }];
         
     } onError:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -147,9 +182,7 @@
     }];
 }
 
-- (void) updateForm {
-    _form.title = _titleTextField.text;
-}
+#pragma mark - Actions
 
 - (void) dissmissSelf {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -161,7 +194,7 @@
 - (IBAction)saveFormWasPressed:(id)sender {
     if (_form != nil) {
         if (_form.uid == nil) {
-            [self createTypeFormRemote];
+            // Show that Form doesn't yet exist
         }
         [self updateForm];
         
@@ -172,8 +205,12 @@
     }
     
 }
-- (IBAction)addQuestionButtonWasPressed:(id)sender {
+
+- (IBAction)buildFormWasPressed:(id)sender {
+    [self createTypeFormRemote];
 }
+
+#pragma mark - Textfield Delegates
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     return YES;

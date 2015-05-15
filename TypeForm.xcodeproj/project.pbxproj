@@ -39,6 +39,7 @@
 		0CF46DFD1B05012C00578733 /* BaseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF46DFC1B05012C00578733 /* BaseApi.m */; };
 		0CF46DFF1B05083A00578733 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF46DFE1B05083A00578733 /* Accounts.framework */; };
 		0CF46E011B05084200578733 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF46E001B05084200578733 /* Social.framework */; };
+		0CF46E051B05EFCC00578733 /* form_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CF46E041B05EFCC00578733 /* form_img@2x.png */; };
 		63E8FA25825231570570BE98 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E341E339868E66F115497F9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +101,7 @@
 		0CF46DFC1B05012C00578733 /* BaseApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseApi.m; sourceTree = "<group>"; };
 		0CF46DFE1B05083A00578733 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		0CF46E001B05084200578733 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		0CF46E041B05EFCC00578733 /* form_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "form_img@2x.png"; sourceTree = "<group>"; };
 		3E341E339868E66F115497F9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BD558F2F4E1342F200561BA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F2EB8DC2AF572E1360E22A8F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 		0CF46DF21B04E7F600578733 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0CF46E041B05EFCC00578733 /* form_img@2x.png */,
 				0CF46DF31B04E90600578733 /* edit@2x.png */,
 				0CF46DF01B04E7F000578733 /* Close_btn_grey@2x.png */,
 			);
@@ -368,6 +371,7 @@
 				0CF46DF91B04F55800578733 /* .gitignore in Resources */,
 				0CF46DA31B04A7F800578733 /* Main.storyboard in Resources */,
 				0CF46DF11B04E7F000578733 /* Close_btn_grey@2x.png in Resources */,
+				0CF46E051B05EFCC00578733 /* form_img@2x.png in Resources */,
 				0CF46DA81B04A7F800578733 /* LaunchScreen.xib in Resources */,
 				0CF46DF41B04E90600578733 /* edit@2x.png in Resources */,
 				0CF46DA51B04A7F800578733 /* Images.xcassets in Resources */,
