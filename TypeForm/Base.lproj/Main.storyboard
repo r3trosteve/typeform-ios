@@ -250,7 +250,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="26"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Question Type e.g short_form" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g6I-2n-7Y3">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="short_text" placeholder="Question Type e.g short_text" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g6I-2n-7Y3">
                                 <rect key="frame" x="79" y="349" width="443" height="86"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="443" id="ef4-pa-vrJ"/>
