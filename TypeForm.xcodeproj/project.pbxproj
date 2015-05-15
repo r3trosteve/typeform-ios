@@ -94,7 +94,6 @@
 		0CF46DE21B04AE6800578733 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0CF46DF01B04E7F000578733 /* Close_btn_grey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Close_btn_grey@2x.png"; sourceTree = "<group>"; };
 		0CF46DF31B04E90600578733 /* edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit@2x.png"; sourceTree = "<group>"; };
-		0CF46DF51B04F3EC00578733 /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
 		0CF46DF81B04F55800578733 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0CF46DFA1B04F59700578733 /* Global.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		0CF46DFB1B05012C00578733 /* BaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseApi.h; sourceTree = "<group>"; };
@@ -102,6 +101,7 @@
 		0CF46DFE1B05083A00578733 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		0CF46E001B05084200578733 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		0CF46E041B05EFCC00578733 /* form_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "form_img@2x.png"; sourceTree = "<group>"; };
+		0CF46E061B06033100578733 /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
 		3E341E339868E66F115497F9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BD558F2F4E1342F200561BA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F2EB8DC2AF572E1360E22A8F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -216,7 +216,7 @@
 				0CF46DC11B04A82C00578733 /* Field.m */,
 				0CF46DC51B04A94300578733 /* Link.h */,
 				0CF46DC61B04A94300578733 /* Link.m */,
-				0CF46DF51B04F3EC00578733 /* Defines.h */,
+				0CF46E061B06033100578733 /* Defines.h */,
 				0CF46DFA1B04F59700578733 /* Global.h */,
 			);
 			name = Models;
