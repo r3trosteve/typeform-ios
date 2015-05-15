@@ -134,8 +134,13 @@
     
     [[BaseApi client] postJSONWithURL:url Param:params onSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         // Handle Success
-        
         NSLog(@"%@", responseObject);
+        _form.uid = [responseObject objectForKey:@"id"];
+        _form.url = [responseObject valueForKeyPath:@"links.form_render.get"];
+        [_form saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            NSLog(@"Typeform saved successfully");
+        }];
+        
     } onError:^(AFHTTPRequestOperation *operation, NSError *error) {
         // Handle Error
         NSLog(@"%@", error);
